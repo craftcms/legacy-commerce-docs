@@ -1,0 +1,12 @@
+.idea
+*.log
+*.bak
+*.DS_Store
+*.orig
+*.sass-cache/*
+*Thumbs.db
+*aspnet_client/*
+*.sass-cache
+node_modules/
+vendor/
+/bower_components
