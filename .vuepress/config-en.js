@@ -16,7 +16,7 @@ module.exports = {
                 children: [
                     'requirements',
                     'installation',
-                    'changes-in-commerce-2',
+                    'changes-in-commerce-3',
                 ]
             },
             {
