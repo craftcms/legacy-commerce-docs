@@ -1,12 +1,12 @@
 module.exports = {
     theme: 'craftdocs',
     ga: 'UA-39036834-13',
-    base: '/commerce/v2/',
+    base: '/commerce/v3/',
     shouldPrefetch: () => false,
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'Commerce 2 Documentation',
+            title: 'Commerce 3 Documentation',
         }
     },
     themeConfig: {
@@ -32,8 +32,10 @@ module.exports = {
                 text: 'Craft Commerce',
                 items: [
                     { text: 'Commerce 1 Documentation', link: 'https://docs.craftcms.com/commerce/v1/' },
-                    { text: 'Commerce 2 Documentation', link: '/' },
+                    { text: 'Commerce 2 Documentation', link: 'https://docs.craftcms.com/commerce/v2/' },
                     { text: 'Commerce 2 Class Reference', link: 'https://docs.craftcms.com/commerce/api/v2/' },
+                    { text: 'Commerce 3 Documentation', link: '/' },
+                    { text: 'Commerce 3 Class Reference', link: 'https://docs.craftcms.com/commerce/api/v3/' },
                 ]
             },
             { text: 'Craftnet API', link: 'https://docs.api.craftcms.com/' },
@@ -103,7 +105,7 @@ function replaceApiLink(link) {
         let hash = m[4]
 
         if (className.match(/^craft\\commerce\\/)) {
-            let url = 'https://docs.craftcms.com/commerce/api/v2/'+className.replace(/\\/g, '-').toLowerCase()+'.html'
+            let url = 'https://docs.craftcms.com/commerce/api/v3/'+className.replace(/\\/g, '-').toLowerCase()+'.html'
             if (subject) {
                 hash = ''
                 if (isMethod) {
