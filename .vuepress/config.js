@@ -34,6 +34,8 @@ module.exports = {
                     { text: 'Commerce 1 Documentation', link: 'https://docs.craftcms.com/commerce/v1/' },
                     { text: 'Commerce 2 Documentation', link: '/' },
                     { text: 'Commerce 2 Class Reference', link: 'https://docs.craftcms.com/commerce/api/v2/' },
+                    { text: 'Commerce 3 Documentation', link: 'https://docs.craftcms.com/commerce/v3/' },
+                    { text: 'Commerce 3 Class Reference', link: 'https://docs.craftcms.com/commerce/api/v3/' },
                 ]
             },
             { text: 'Craftnet API', link: 'https://docs.api.craftcms.com/' },
@@ -103,7 +105,7 @@ function replaceApiLink(link) {
         let hash = m[4]
 
         if (className.match(/^craft\\commerce\\/)) {
-            let url = 'https://docs.craftcms.com/commerce/api/v2/'+className.replace(/\\/g, '-').toLowerCase()+'.html'
+            let url = 'https://docs.craftcms.com/commerce/api/v3/'+className.replace(/\\/g, '-').toLowerCase()+'.html'
             if (subject) {
                 hash = ''
                 if (isMethod) {
