@@ -7,16 +7,8 @@ Source/.idea/*
 *.sass-cache/*
 *Thumbs.db
 *aspnet_client/*
-<<<<<<< HEAD
-Build/*
 *.sass-cache
 node_modules/
 vendor/
 /bower_components
 cpresources/*
-=======
-*.sass-cache
-node_modules/
-vendor/
-/bower_components
->>>>>>> develop
