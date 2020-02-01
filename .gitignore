@@ -1,8 +1,5 @@
 .idea
-<<<<<<< HEAD
 Source/.idea/*
-=======
->>>>>>> develop
 *.log
 *.bak
 *.DS_Store
