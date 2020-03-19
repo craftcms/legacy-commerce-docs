@@ -1,6 +1,14 @@
 module.exports = {
     selectText: 'Language',
     label: 'English',
+    algolia: {
+        apiKey: '335e88a34d1ab07e089b6a99b27c8e96',
+        indexName: 'craftcms_commerce',
+        algoliaOptions: {
+            facetFilters: ['version:v2', 'tags:doc', 'tags:en'],
+            hitsPerPage: 10
+        }
+    },
     sidebar: {
         '/': [
             {
