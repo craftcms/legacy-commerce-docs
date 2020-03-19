@@ -11,10 +11,10 @@ module.exports = {
     },
     themeConfig: {
         docsRepo: 'craftcms/commerce',
-        docsDir: 'docs',
-        docsBranch: 'develop',
+        docsDir: '',
+        docsBranch: 'v3',
         editLinks: true,
-        docsDir: 'docs',
+        searchMaxSuggestions: 10,
         locales: {
             '/': require('./config-en')
         },

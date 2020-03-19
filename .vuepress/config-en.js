@@ -1,6 +1,16 @@
 module.exports = {
     selectText: 'Language',
     label: 'English',
+    // text for the edit-on-github link
+    editLinkText: 'Edit this page on GitHub',
+    algolia: {
+        apiKey: '335e88a34d1ab07e089b6a99b27c8e96',
+        indexName: 'craftcms_commerce',
+        algoliaOptions: {
+            facetFilters: ['version:v3', 'tags:doc', 'tags:en'],
+            hitsPerPage: 10
+        }
+    },
     sidebar: {
         '/': [
             {
