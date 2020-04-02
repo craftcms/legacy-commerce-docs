@@ -100,6 +100,7 @@ module.exports = {
                     'coupon-codes',
                     'customer-address-management',
                     'twig-filters',
+                    'loading-a-cart',
                     'making-payments',
                     'saving-payment-sources',
                     'subscription-templates',
