@@ -10,6 +10,7 @@ module.exports = {
         }
     },
     themeConfig: {
+        logo: '/icon.svg',
         docsRepo: 'craftcms/commerce',
         docsDir: 'docs',
         docsBranch: 'develop',
