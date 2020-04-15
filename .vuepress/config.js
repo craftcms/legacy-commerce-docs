@@ -11,7 +11,7 @@ module.exports = {
     },
     themeConfig: {
         logo: '/icon.svg',
-        docsRepo: 'craftcms/commerce',
+        docsRepo: 'craftcms/commerce-docs',
         docsDir: '',
         docsBranch: 'v3',
         editLinks: true,
