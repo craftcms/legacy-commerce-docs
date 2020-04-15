@@ -12,10 +12,9 @@ module.exports = {
     themeConfig: {
         logo: '/icon.svg',
         docsRepo: 'craftcms/commerce-docs',
-        docsDir: 'docs',
-        docsBranch: 'develop',
+        docsDir: '',
+        docsBranch: 'v2',
         editLinks: true,
-        docsDir: 'docs',
         locales: {
             '/': require('./config-en')
         },
