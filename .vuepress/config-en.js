@@ -17,6 +17,7 @@ module.exports = {
                 title: 'Introduction',
                 collapsable: false,
                 children: [
+                    ['', 'Introduction'],
                     'editions',
                 ]
             },
