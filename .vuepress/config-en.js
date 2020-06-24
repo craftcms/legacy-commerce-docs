@@ -102,6 +102,7 @@ module.exports = {
                     'customer-address-management',
                     'twig-filters',
                     'loading-a-cart',
+                    'display-cart-items',
                     'making-payments',
                     'saving-payment-sources',
                     'subscription-templates',
