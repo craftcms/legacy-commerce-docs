@@ -85,10 +85,12 @@ Variant queries support the following parameters:
 | [hasProduct](#hasproduct)                 | Narrows the query results to only variants for certain products.
 | [hasSales](#hassales)                     | Narrows the query results to only variants that are on sale.
 | [hasStock](#hasstock)                     | Narrows the query results to only variants that have stock.
+| [height](#height)                         | Narrows the query results based on the variants’ height dimension.
 | [id](#id)                                 | Narrows the query results based on the variants’ IDs.
 | [ignorePlaceholders](#ignoreplaceholders) | Causes the query to return matching variants as they are stored in the database, ignoring matching placeholder elements that were set by [craft\services\Elements::setPlaceholderElement()](https://docs.craftcms.com/api/v3/craft-services-elements.html#method-setplaceholderelement).
 | [inReverse](#inreverse)                   | Causes the query results to be returned in reverse order.
 | [isDefault](#isdefault)                   | Narrows the query results to only default variants.
+| [length](#length)                         | Narrows the query results based on the variants’ length dimension.
 | [limit](#limit)                           | Determines the number of variants that should be returned.
 | [maxQty](#maxqty)                         | Narrows the query results based on the variants’ max quantity.
 | [minQty](#minqty)                         | Narrows the query results based on the variants’ min quantity.
@@ -110,6 +112,8 @@ Variant queries support the following parameters:
 | [typeId](#typeid)                         | Narrows the query results based on the variants’ product types, per their IDs.
 | [uid](#uid)                               | Narrows the query results based on the variants’ UIDs.
 | [unique](#unique)                         | Determines whether only elements with unique IDs should be returned by the query.
+| [weight](#weight)                         | Narrows the query results based on the variants’ weight dimension.
+| [width](#width)                           | Narrows the query results based on the variants’ width dimension.
 | [with](#with)                             | Causes the query to return matching variants eager-loaded with related elements.
 
 ### `anyStatus`
@@ -315,6 +319,47 @@ Possible values include:
 
 
 
+### `height`
+
+Narrows the query results based on the variants’ height dimension.
+
+
+
+
+
+::: code
+```twig
+{# Fetch all variants with a height greater than 100 #}
+{% set variants = craft.variants()
+    .height("> 100")
+    .all() %}
+```
+
+```php
+// Fetch all variants with a height greater than 100
+$variants = \craft\commerce\elements\Variant::find()
+    ->height("> 100")
+    ->all();
+```
+
+```graphql
+# Fetch all variants with a height greater than 100
+{
+  variants(height: "> 100") {
+    # ...
+  }
+}
+```
+:::
+
+
+
+::: tip
+Querying variants by height will restrict the query to only those product types the have dimensions enabled.
+:::
+
+
+
 ### `id`
 
 Narrows the query results based on the variants’ IDs.
@@ -415,6 +460,50 @@ $variants = \craft\commerce\elements\Variant::find()
     ->all();
 ```
 :::
+
+
+
+
+### `length`
+
+Narrows the query results based on the variants’ length dimension.
+
+
+
+
+
+::: code
+```twig
+{# Fetch all variants with a length greater than 100 #}
+{% set variants = craft.variants()
+    .length("> 100")
+    .all() %}
+```
+
+```php
+// Fetch all variants with a length greater than 100
+$variants = \craft\commerce\elements\Variant::find()
+    ->length("> 100")
+    ->all();
+```
+
+```graphql
+# Fetch all variants with a length greater than 100
+{
+  variants(length: "> 100") {
+    # ...
+  }
+}
+```
+:::
+
+
+
+::: tip
+Querying variants by length will restrict the query to only those product types the have dimensions enabled.
+:::
+
+
 
 
 ### `limit`
@@ -941,6 +1030,95 @@ $variants = \craft\commerce\elements\Variant::find()
     ->all();
 ```
 :::
+
+
+
+
+### `weight`
+
+Narrows the query results based on the variants’ weight dimension.
+
+
+
+
+
+::: code
+```twig
+{# Fetch all variants with a weight greater than 100 #}
+{% set variants = craft.variants()
+    .weight("> 100")
+    .all() %}
+```
+
+```php
+// Fetch all variants with a weight greater than 100
+$variants = \craft\commerce\elements\Variant::find()
+    ->weight("> 100")
+    ->all();
+```
+
+```graphql
+# Fetch all variants with a weight greater than 100
+{
+  variants(weight: "> 100") {
+    # ...
+  }
+}
+```
+:::
+
+
+
+::: tip
+Querying variants by weight will restrict the query to only those product types the have dimensions enabled.
+:::
+
+
+
+
+
+
+
+### `width`
+
+Narrows the query results based on the variants’ width dimension.
+
+
+
+
+
+::: code
+```twig
+{# Fetch all variants with a width greater than 100 #}
+{% set variants = craft.variants()
+    .width("> 100")
+    .all() %}
+```
+
+```php
+// Fetch all variants with a width greater than 100
+$variants = \craft\commerce\elements\Variant::find()
+    ->width("> 100")
+    ->all();
+```
+
+```graphql
+# Fetch all variants with a width greater than 100
+{
+  variants(width: "> 100") {
+    # ...
+  }
+}
+```
+:::
+
+
+
+::: tip
+Querying variants by width will restrict the query to only those product types the have dimensions enabled.
+:::
+
+
 
 
 ### `with`
