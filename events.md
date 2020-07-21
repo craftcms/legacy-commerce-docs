@@ -279,6 +279,52 @@ Event::on(
 );
 ```
 
+### `afterApplyAddLineItemToOrder`
+
+The event that is triggered after a line item has been added to an order.
+
+```php
+use craft\commerce\elements\Order;
+use craft\commerce\events\LineItemEvent;
+use craft\commerce\models\LineItem;
+use yii\base\Event;
+
+Event::on(
+    Order::class,
+    Order::EVENT_AFTER_APPLY_ADD_LINE_ITEM,
+    function(LineItemEvent $event) {
+        // @var LineItem $lineItem
+        $lineItem = $event->lineItem;
+        // @var bool $isNew
+        $isNew = $event->isNew;
+        // ...
+    }
+);
+```
+
+### `afterApplyRemoveLineItemFromOrder`
+
+The event that is triggered after a line item has been removed from an order.
+
+```php
+use craft\commerce\elements\Order;
+use craft\commerce\events\LineItemEvent;
+use craft\commerce\models\LineItem;
+use yii\base\Event;
+
+Event::on(
+    Order::class,
+    Order::EVENT_AFTER_APPLY_REMOVE_LINE_ITEM,
+    function(LineItemEvent $event) {
+        // @var LineItem $lineItem
+        $lineItem = $event->lineItem;
+        // @var bool $isNew
+        $isNew = $event->isNew;
+        // ...
+    }
+);
+```
+
 ### `afterRemoveLineItemToOrder`
 
 The event that is triggered after a line item has been removed from an order.
