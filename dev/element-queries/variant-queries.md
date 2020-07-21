@@ -120,10 +120,6 @@ Variant queries support the following parameters:
 
 Clears out the [status](#status) and [enabledForSite()](https://docs.craftcms.com/api/v3/craft-elements-db-elementquery.html#method-enabledforsite) parameters.
 
-
-
-
-
 ::: code
 ```twig
 {# Fetch all variants, regardless of status #}
@@ -140,14 +136,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `asArray`
 
 Causes the query to return matching variants as arrays of data, rather than [Variant](api:craft\commerce\elements\Variant) objects.
-
-
-
-
 
 ::: code
 ```twig
@@ -170,16 +161,9 @@ $variants = \craft\commerce\elements\Variant::find()
 
 Clears the cached result.
 
-
-
-
-
-
 ### `dateCreated`
 
 Narrows the query results based on the variants’ creation dates.
-
-
 
 Possible values include:
 
@@ -188,8 +172,6 @@ Possible values include:
 | `'>= 2018-04-01'` | that were created on or after 2018-04-01.
 | `'< 2018-05-01'` | that were created before 2018-05-01
 | `['and', '>= 2018-04-04', '< 2018-05-01']` | that were created between 2018-04-01 and 2018-05-01.
-
-
 
 ::: code
 ```twig
@@ -213,12 +195,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `dateUpdated`
 
 Narrows the query results based on the variants’ last-updated dates.
-
-
 
 Possible values include:
 
@@ -227,8 +206,6 @@ Possible values include:
 | `'>= 2018-04-01'` | that were updated on or after 2018-04-01.
 | `'< 2018-05-01'` | that were updated before 2018-05-01
 | `['and', '>= 2018-04-04', '< 2018-05-01']` | that were updated between 2018-04-01 and 2018-05-01.
-
-
 
 ::: code
 ```twig
@@ -250,14 +227,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `fixedOrder`
 
 Causes the query results to be returned in the order specified by [id](#id).
-
-
-
-
 
 ::: code
 ```twig
@@ -277,7 +249,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `hasProduct`
 
 Narrows the query results to only variants for certain products.
@@ -287,9 +258,6 @@ Possible values include:
 | Value | Fetches variants…
 | - | -
 | a [ProductQuery](api:craft\commerce\elements\db\ProductQuery) object | for products that match the query.
-
-
-
 
 ### `hasSales`
 
@@ -302,9 +270,6 @@ Possible values include:
 | `true` | on sale
 | `false` | not on sale
 
-
-
-
 ### `hasStock`
 
 Narrows the query results to only variants that have stock.
@@ -316,16 +281,9 @@ Possible values include:
 | `true` | with stock.
 | `false` | with no stock.
 
-
-
-
 ### `height`
 
 Narrows the query results based on the variants’ height dimension.
-
-
-
-
 
 ::: code
 ```twig
@@ -352,19 +310,13 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
 ::: tip
-Querying variants by height will restrict the query to only those product types the have dimensions enabled.
+Querying variants by height will restrict the query to only those product types that have dimensions enabled.
 :::
-
-
 
 ### `id`
 
 Narrows the query results based on the variants’ IDs.
-
-
 
 Possible values include:
 
@@ -374,8 +326,6 @@ Possible values include:
 | `'not 1'` | not with an ID of 1.
 | `[1, 2]` | with an ID of 1 or 2.
 | `['not', 1, 2]` | not with an ID of 1 or 2.
-
-
 
 ::: code
 ```twig
@@ -393,34 +343,18 @@ $variant = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
 ::: tip
 This can be combined with [fixedOrder](#fixedorder) if you want the results to be returned in a specific order.
 :::
-
 
 ### `ignorePlaceholders`
 
 Causes the query to return matching variants as they are stored in the database, ignoring matching placeholder
 elements that were set by [craft\services\Elements::setPlaceholderElement()](https://docs.craftcms.com/api/v3/craft-services-elements.html#method-setplaceholderelement).
 
-
-
-
-
-
-
-
-
-
 ### `inReverse`
 
 Causes the query results to be returned in reverse order.
-
-
-
-
 
 ::: code
 ```twig
@@ -438,12 +372,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `isDefault`
 
 Narrows the query results to only default variants.
-
-
 
 ::: code
 ```twig
@@ -461,16 +392,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
-
 ### `length`
 
 Narrows the query results based on the variants’ length dimension.
-
-
-
-
 
 ::: code
 ```twig
@@ -497,20 +421,13 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
 ::: tip
-Querying variants by length will restrict the query to only those product types the have dimensions enabled.
+Querying variants by length will restrict the query to only those product types that have dimensions enabled.
 :::
-
-
-
 
 ### `limit`
 
 Determines the number of variants that should be returned.
-
-
 
 ::: code
 ```twig
@@ -528,7 +445,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `maxQty`
 
 Narrows the query results based on the variants’ max quantity.
@@ -540,9 +456,6 @@ Possible values include:
 | `100` | with a maxQty of 100.
 | `'>= 100'` | with a maxQty of at least 100.
 | `'< 100'` | with a maxQty of less than 100.
-
-
-
 
 ### `minQty`
 
@@ -556,14 +469,9 @@ Possible values include:
 | `'>= 100'` | with a minQty of at least 100.
 | `'< 100'` | with a minQty of less than 100.
 
-
-
-
 ### `offset`
 
 Determines how many variants should be skipped in the results.
-
-
 
 ::: code
 ```twig
@@ -581,12 +489,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `orderBy`
 
 Determines the order that the variants should be returned in. (If empty, defaults to `sortOrder ASC`.)
-
-
 
 ::: code
 ```twig
@@ -604,20 +509,15 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `preferSites`
 
 If [unique](#unique) is set, this determines which site should be selected when querying multi-site elements.
-
-
 
 For example, if element “Foo” exists in Site A and Site B, and element “Bar” exists in Site B and Site C,
 and this is set to `['c', 'b', 'a']`, then Foo will be returned for Site C, and Bar will be returned
 for Site B.
 
 If this isn’t set, then preference goes to the current site.
-
-
 
 ::: code
 ```twig
@@ -639,7 +539,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `price`
 
 Narrows the query results based on the variants’ price.
@@ -652,9 +551,6 @@ Possible values include:
 | `'>= 100'` | with a price of at least 100.
 | `'< 100'` | with a price of less than 100.
 
-
-
-
 ### `product`
 
 Narrows the query results based on the variants’ product.
@@ -664,9 +560,6 @@ Possible values include:
 | Value | Fetches variants…
 | - | -
 | a [Product](api:craft\commerce\elements\Product) object | for a product represented by the object.
-
-
-
 
 ### `productId`
 
@@ -680,18 +573,11 @@ Possible values include:
 | `[1, 2]` | for product with an ID of 1 or 2.
 | `['not', 1, 2]` | for product not with an ID of 1 or 2.
 
-
-
-
 ### `relatedTo`
 
 Narrows the query results to only variants that are related to certain other elements.
 
-
-
 See [Relations](https://docs.craftcms.com/v3/relations.html) for a full explanation of how to work with this parameter.
-
-
 
 ::: code
 ```twig
@@ -709,16 +595,11 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `search`
 
 Narrows the query results to only variants that match a search query.
 
-
-
 See [Searching](https://docs.craftcms.com/v3/searching.html) for a full explanation of how to work with this parameter.
-
-
 
 ::: code
 ```twig
@@ -742,12 +623,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `site`
 
 Determines which site(s) the variants should be queried in.
-
-
 
 The current site will be used by default.
 
@@ -766,8 +644,6 @@ If multiple sites are specified, elements that belong to multiple sites will be 
 only want unique elements to be returned, use [unique](#unique) in conjunction with this.
 :::
 
-
-
 ::: code
 ```twig
 {# Fetch variants from the Foo site #}
@@ -784,16 +660,11 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `siteId`
 
 Determines which site(s) the variants should be queried in, per the site’s ID.
 
-
-
 The current site will be used by default.
-
-
 
 ::: code
 ```twig
@@ -811,7 +682,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `sku`
 
 Narrows the query results based on the variants’ SKUs.
@@ -827,8 +697,6 @@ Possible values include:
 | `'not *foo*'` | with a SKU that doesn’t contain `foo`.
 | `['*foo*', '*bar*'` | with a SKU that contains `foo` or `bar`.
 | `['not', '*foo*', '*bar*']` | with a SKU that doesn’t contain `foo` or `bar`.
-
-
 
 ::: code
 ```twig
@@ -852,12 +720,9 @@ $variant = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `status`
 
 Narrows the query results based on the variants’ statuses.
-
-
 
 Possible values include:
 
@@ -865,8 +730,6 @@ Possible values include:
 | - | -
 | `'enabled'`  _(default)_ | that are enabled.
 | `'disabled'` | that are disabled.
-
-
 
 ::: code
 ```twig
@@ -884,7 +747,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `stock`
 
 Narrows the query results based on the variants’ stock.
@@ -897,14 +759,9 @@ Possible values include:
 | `'>= 5'` | with a stock of at least 5.
 | `'< 10'` | with a stock of less than 10.
 
-
-
-
 ### `title`
 
 Narrows the query results based on the variants’ titles.
-
-
 
 Possible values include:
 
@@ -917,8 +774,6 @@ Possible values include:
 | `'not *Foo*'` | with a title that doesn’t contain `Foo`.
 | `['*Foo*', '*Bar*']` | with a title that contains `Foo` or `Bar`.
 | `['not', '*Foo*', '*Bar*']` | with a title that doesn’t contain `Foo` or `Bar`.
-
-
 
 ::: code
 ```twig
@@ -936,14 +791,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `trashed`
 
 Narrows the query results to only variants that have been soft-deleted.
-
-
-
-
 
 ::: code
 ```twig
@@ -961,7 +811,6 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `typeId`
 
 Narrows the query results based on the variants’ product types, per their IDs.
@@ -974,16 +823,9 @@ Possible values include:
 | `[1, 2]` | for product of a type with an ID of 1 or 2.
 | `['not', 1, 2]` | for product of a type not with an ID of 1 or 2.
 
-
-
-
 ### `uid`
 
 Narrows the query results based on the variants’ UIDs.
-
-
-
-
 
 ::: code
 ```twig
@@ -1001,17 +843,12 @@ $variant = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
 ### `unique`
 
 Determines whether only elements with unique IDs should be returned by the query.
 
-
-
 This should be used when querying elements from multiple sites at the same time, if “duplicate” results is not
 desired.
-
-
 
 ::: code
 ```twig
@@ -1031,16 +868,9 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
-
 ### `weight`
 
 Narrows the query results based on the variants’ weight dimension.
-
-
-
-
 
 ::: code
 ```twig
@@ -1067,25 +897,13 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
 ::: tip
-Querying variants by weight will restrict the query to only those product types the have dimensions enabled.
+Querying variants by weight will restrict the query to only those product types that have dimensions enabled.
 :::
-
-
-
-
-
-
 
 ### `width`
 
 Narrows the query results based on the variants’ width dimension.
-
-
-
-
 
 ::: code
 ```twig
@@ -1112,24 +930,15 @@ $variants = \craft\commerce\elements\Variant::find()
 ```
 :::
 
-
-
 ::: tip
-Querying variants by width will restrict the query to only those product types the have dimensions enabled.
+Querying variants by width will restrict the query to only those product types that have dimensions enabled.
 :::
-
-
-
 
 ### `with`
 
 Causes the query to return matching variants eager-loaded with related elements.
 
-
-
 See [Eager-Loading Elements](https://docs.craftcms.com/v3/dev/eager-loading-elements.html) for a full explanation of how to work with this parameter.
-
-
 
 ::: code
 ```twig
@@ -1146,7 +955,5 @@ $variants = \craft\commerce\elements\Variant::find()
     ->all();
 ```
 :::
-
-
 
 <!-- END PARAMS -->
