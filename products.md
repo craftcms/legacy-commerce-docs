@@ -43,6 +43,8 @@ If a product type has multiple variants enabled, the author can choose which one
 
 Products may be configured for either unlimited stock or a specific quantity per variant, even if using the single default variant. A variant’s finite stock amount will automatically be reduced whenever someone completes an order until it reaches zero.
 
+Though a variant’s “Available for purchase” setting won’t be changed, it cannot be added to a cart once its stock has reached zero.
+
 For returns or refunds that aren’t ultimately delivered to the customer, you’ll need to either manually update product stock or use [the `orderStatusChange` event](events.md#orderstatuschange) to automate further stock adjustments.
 
 ## Purchasables
