@@ -14,23 +14,37 @@ For starting a subscription, the following example is a good start.
 Gateways handle subscription payment sources differently, which might impact what’s needed for your template.
 :::
 
-This example creates a form for posting a plan selection to the `commerce/subscriptions/subscribe` form action:
+This example creates a form for each available plan, posting the selection to the `commerce/subscriptions/subscribe` form action:
 
 ```twig
 {% set plans = craft.commerce.getPlans().getAllPlans() %}
 
-<form method="post">
-    <input type="hidden" name="action" value="commerce/subscriptions/subscribe">
-    {{ csrfInput() }}
+{% for plan in plans %}
+    <form method="post">
+        <input type="hidden" name="action" value="commerce/subscriptions/subscribe">
+        <input type="hidden" name="planUid" value="{{ plan.uid|hash }}">
+        {{ csrfInput() }}
 
-    <select name="planUid">
-        {% for plan in plans %}
-            <option value="{{ plan.uid|hash }}">{{ plan.name }}</option>
-        {% endfor %}
-    </select>
+        <h4>{{ plane.name }}</h4>
 
-    <button type="submit">Subscribe</button>
-</form>
+        {% set paymentSources = craft.commerce.
+            getPaymentSources().
+            getAllGatewayPaymentSourcesByUserId(
+                plan.getGateway().id,
+                currentUser.id ?? null
+            )
+        %}
+        
+        {# if we don’t have a saved payment soruce, collect details for the gateway #}
+        {% if not paymentSources|length %}
+            <div class="paymentForm">
+                {{ plan.getGateway().getPaymentFormHtml({})|raw }}
+            </div>
+        {% endif %}
+
+        <button type="submit">{{ "Subscribe"|t }}</button>
+    </form>
+{% endfor %}
 ```
 
 There are several things to note:
@@ -71,7 +85,7 @@ To switch a subscription plan you can use the following template. It assumes tha
         <input type="hidden" name="subscriptionUid" value="{{ subscription.uid|hash }}">
         {{ csrfInput() }}
 
-        {{ plan.gateway.getSwitchPlansFormHtml(subscription.plan, plan)|raw }}
+        {{ plan.getGateway().getSwitchPlansFormHtml(subscription.plan, plan)|raw }}
 
         <button type="submit" class="button link">Switch</button>
     </form>
