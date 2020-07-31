@@ -1437,7 +1437,7 @@ Event::on(
 );
 ```
 
-## Other events
+## Other Events
 
 ### `beforeSaveAddress`
 
@@ -1507,6 +1507,28 @@ Event::on(
         $address = $event->address;
 
         // Remove this address from a payment gateway
+        // ...
+    }
+);
+```
+
+### `defineAddressLines`
+
+The event that is triggered when defining the [arrayable address fields](api:craft\commerce\models\Address::getAddressLines()).
+
+```php
+use craft\commerce\events\DefineAddressLinesEvent;
+use craft\commerce\models\Address;
+use yii\base\Event;
+
+Event::on(
+    Address::class,
+    Address::EVENT_DEFINE_ADDRESS_LINES,
+    function(DefineAddressLinesEvent $event) {
+        // @var array $addressLines
+        $addressLines = $event->addressLines;
+
+        // Modify default address lines array
         // ...
     }
 );
